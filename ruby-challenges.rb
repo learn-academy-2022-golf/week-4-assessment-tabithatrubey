@@ -2,7 +2,7 @@
 # MINASWAN ✌️
 
 # --------------------1) Create a method that takes in a number and determines if the number is even or odd. Use the test variables provided.
-
+# I kept getting stuck becuase I put 'p #{num}  is even"' and 'p #{num}  is odd' when that line isn't supposed to have a print.
 num1 = 7
 # Expected output: '7 is odd'
 num2 = 42
@@ -10,7 +10,17 @@ num2 = 42
 num3 = 221
 # Expected output: '221 is odd'
 
+def even_odd num
+    if num % 2 == 0
+         "#{num} is even"
+    elsif num % 2 != 0
+         "#{num} is odd"
+    end
+end
 
+p even_odd 7
+p even_odd num2
+p even_odd num3
 
 # -------------------2) Create a method that takes in a string and removes all the vowels from the string. Use the test variables provided. 
 # HINT: Check out this resource: https://ruby-doc.org/core-2.6/String.html#method-i-delete
@@ -22,13 +32,33 @@ beatles_album2 = 'Sgt Pepper'
 beatles_album3 = 'Abbey Road'
 # Expected output: 'bby Rd'
 
+def no_vowels string
+    string.downcase.delete "aeiou"
+end
+
+p no_vowels beatles_album1
+p no_vowels beatles_album2
+p no_vowels beatles_album3
 
 
 # -------------------3) Create a method that takes in a string and checks if the string is a palindrome. A palindrome is the same word spelled forward or backward. Use the test variables provided.
-
+# Was so proud of myself for completely this one so quickly, and then my tester2 kept returning as a palindrome. Forgot to add loose equality!
 palindrome_tester1 = 'Racecar'
 # Expected output: 'Racecar is a palindrome'
 palindrome_tester2 = 'LEARN'
 # Expected output: 'LEARN is not a palindrome'
 palindrome_tester3 = 'Rotator'
 # Expected output: 'Rotator is a palindrome'
+
+def palindrome string
+    if string == string.reverse
+        "#{string} is a palindrome"
+    elsif string != string.reverse 
+        "#{string} is not a palindrome"
+       
+    end
+end
+
+p palindrome palindrome_tester1
+p palindrome palindrome_tester2
+p palindrome palindrome_tester3
